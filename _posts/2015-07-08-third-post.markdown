@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "First Post"
-date:   2015-04-03 23:10:53
+title:  "Third Post"
+date:   2015-07-08 23:11:53
 categories: jekyll update
 ---
 Hello, World!

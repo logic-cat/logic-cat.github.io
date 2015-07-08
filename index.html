@@ -1,17 +1,16 @@
 ---
 layout: default
 ---
-  <h4>Posts</h4>
-
-  <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h5>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h5>
-      </li>
+      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+          <div class="mdl-card__supporting-text">
+            <h4>{{ post.title }}</h4>
+            {{ post.content }}
+          </div>
+          <div class="mdl-card__actions">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </div>
+        </div>
+      </section>
     {% endfor %}
-  </ul>
-
