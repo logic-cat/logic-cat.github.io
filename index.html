@@ -1,16 +1,26 @@
 ---
 layout: default
 ---
-    {% for post in site.posts %}
-      <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-        <div class="mdl-card mdl-cell mdl-cell--12-col">
-          <div class="mdl-card__supporting-text">
-            <h4>{{ post.title }}</h4>
-            {{ post.content }}
-          </div>
-          <div class="mdl-card__actions">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </div>
+<div class="mdl-layout__tab-panel is-active" id="posts">
+  {% for post in site.posts %}
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text">
+          <a href="{{ post.url | prepend: site.baseurl }}"><h4>{{ post.title }}</h4></a>
+          {{ post.content }}
         </div>
-      </section>
-    {% endfor %}
+        <div class="mdl-card__actions">
+          {{ post.date | date: "%b %-d, %Y" }}
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+</div>
+<div class="mdl-layout__tab-panel is-active" id="about">
+  <section class="section--center mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--12-col">
+      <h4>About</h4>
+      A blog about our embedded projects. The name logic.cat was chosen because it was available.
+    </div>
+  </section>
+</div>
