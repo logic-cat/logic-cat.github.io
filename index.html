@@ -3,24 +3,38 @@ layout: default
 ---
 <div class="mdl-layout__tab-panel is-active" id="posts">
   {% for post in site.posts %}
-    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-      <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <section class="section--center mdl-grid mdl-grid--no-spacing ">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell--8-col">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">
+            <a href="{{ post.url | prepend: site.baseurl }}"><h4>{{ post.title }}</h4></a>
+          </h2>
+        </div>
         <div class="mdl-card__supporting-text">
-          <a href="{{ post.url | prepend: site.baseurl }}"><h4>{{ post.title }}</h4></a>
           {{ post.content }}
         </div>
-        <div class="mdl-card__actions">
-          {{ post.date | date: "%b %-d, %Y" }}
+        <div class="mdl-card__actions mdl-card--border">
+          
+            {{ post.date | date: "%b %-d, %Y" }}
+          
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">share</i>
+          </button>
         </div>
       </div>
+<!--
+          <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__supporting-text">
+              <a href="{{ post.url | prepend: site.baseurl }}"><h4>{{ post.title }}</h4></a>
+              {{ post.content }}
+            </div>
+            <div class="mdl-card__actions">
+              {{ post.date | date: "%b %-d, %Y" }}
+            </div>
+          </div>
+ -->         
     </section>
   {% endfor %}
-</div>
-<div class="mdl-layout__tab-panel is-active" id="about">
-  <section class="section--center mdl-grid mdl-grid--no-spacing">
-    <div class="mdl-cell mdl-cell--12-col">
-      <h4>About</h4>
-      A blog about our embedded projects. The name logic.cat was chosen because it was available.
-    </div>
-  </section>
 </div>

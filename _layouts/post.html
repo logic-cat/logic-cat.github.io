@@ -1,10 +1,14 @@
 ---
 layout: default
 ---
-<h4>{{ page.title }}</h4>
-<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-</header>
 
-<article class="post-content">
-{{ content }}
-</article>
+<section class="section--center mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--12-col">
+		<h4>{{ page.title }}</h4>
+		<p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+		</header>
+		<article class="post-content">
+		{{ content }}
+		</article>
+    </div>
+</section>
