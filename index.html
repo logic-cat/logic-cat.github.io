@@ -1,40 +1,27 @@
 ---
 layout: default
 ---
-<div class="page-content">
-  {% for post in site.posts %}
-    <section class="section--center mdl-grid ">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell--8-col">
-        <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">
-            <a href="{{ post.url | prepend: site.baseurl }}"><h4>{{ post.title }}</h4></a>
-          </h2>
-        </div>
-        <div class="mdl-card__supporting-text">
-          {{ post.content }}
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          
-            {{ post.date | date: "%b %-d, %Y" }}
-          
-        </div>
-        <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">share</i>
-          </button>
-        </div>
-      </div>
-<!--
-          <div class="mdl-card mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__supporting-text">
-              <a href="{{ post.url | prepend: site.baseurl }}"><h4>{{ post.title }}</h4></a>
-              {{ post.content }}
-            </div>
-            <div class="mdl-card__actions">
-              {{ post.date | date: "%b %-d, %Y" }}
-            </div>
-          </div>
- -->         
-    </section>
-  {% endfor %}
-</div>
+{% for post in site.posts %}
+	<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
+		<div class="mdl-card__title">
+	 		<h2 class="mdl-card__title-text">{{ post.title }}</h2>
+		</div>
+		<div class="mdl-card__supporting-text">
+			{{ post.excerpt }}
+		</div>
+		<div class="mdl-card__actions mdl-card--border">
+			<span>
+			<a href="{{ post.url | prepend: site.baseurl }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+	    		read more
+			</a>
+			</span>
+			<div class="mdl-layout-spacer"></div>
+			{{ post.date | date: "%b %-d, %Y" }}
+		</div>
+		<div class="mdl-card__menu">
+			<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+				<i class="material-icons">share</i>
+			</button>
+		</div>
+	</div>
+{% endfor %}
