@@ -2,12 +2,18 @@
 <html>
 	{% include head.html %}
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    	{% include header.html %}
-		<main class="mdl-layout__content">
-			<div class="mdl-grid">
-    			{{ content }}
-    		</div>
-		</main>
-		{% include footer.html %}
-	</div>
+    {% include header.html %}
+    <div id="content_wrapper">
+      <div id="content_inner_wrapper">
+		    <main class="mdl-layout__content">
+          <div class="mdl-grid">
+            {{ content }}
+          </div>
+		    </main>
+      </div>
+    </div>
+    <div id="footer_wrapper">
+		  {% include footer.html %}
+    </div>
+  </div>
 </html>
