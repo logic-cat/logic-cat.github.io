@@ -8,7 +8,7 @@ permalink: /about/
         <h2 class="mdl-card__title-text">Kat</h2>
     </div>
     <div class="mdl-card__supporting-text">
-        <li>Software Test Engineer - Motorola Solutions</li>
+        <li>Software Engineer - Raytheon</li>
         <li>Computer Engineering - University of Illinois at Chicago</li>
     </div>
 </div>
@@ -17,7 +17,7 @@ permalink: /about/
         <h2 class="mdl-card__title-text">Dan</h2>
     </div>
     <div class="mdl-card__supporting-text">
-        <li>Software Engineer - Motorola Solutions</li>
+        <li>Software Engineer - Raytheon</li>
         <li>Computer Engineering - University of Illinois at Chicago</li>
     </div>
 </div>
