@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Kati Post"
-date:   2015-07-08 23:20:53
-categories: jekyll update
----
-Hello, World!
-
