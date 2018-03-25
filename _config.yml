@@ -1,9 +1,0 @@
-# Site settings
-title: Logic.Cat
-description: > # this means to ignore newlines until "baseurl:"
- An embedded project blog.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.logic.cat" # the base hostname & protocol for your site
-
-# Build settings
-markdown: kramdown
