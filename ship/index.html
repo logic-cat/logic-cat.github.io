@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <title>Unity WebGL Player | AndroidTest</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -13,7 +14,6 @@
       var screenlock = function()
       { 
         screen.orientation.lock('portrait');
-        window.screen.lockOrientation('portrait');
         gameInstance.SetFullscreen(1);
       };
     </script>
