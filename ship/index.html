@@ -10,6 +10,11 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGLTest.json", {onProgress: UnityProgress});
+      var screenlock = function()
+      { 
+        screen.orientation.lock('portrait');
+        gameInstance.SetFullscreen(1);
+      };
     </script>
   </head>
   <body>
@@ -17,7 +22,7 @@
       <div id="gameContainer" style="width: 600px; height: 960px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="screen.orientation.lock('portrait');gameInstance.SetFullscreen(1)"></div>
+        <div class="fullscreen" onclick="screenlock()"></div>
         <div class="title">AndroidTest</div>
       </div>
     </div>
