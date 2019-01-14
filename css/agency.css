@@ -4,7 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
+ body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -232,6 +232,7 @@ fieldset[disabled] .btn-xl.active {
     font-weight: 400;
     letter-spacing: 1px;
     color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .navbar-default .nav li a:hover,
@@ -316,6 +317,7 @@ header .intro-text .intro-heading {
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
+    text-shadow: 4px 0 0 #000, 0 -4px 0 #000, 0 4px 0 #000, -4px 0 0 #000;
 }
 
 @media(min-width:768px) {
@@ -384,6 +386,10 @@ section h3.section-subheading {
     max-width: 400px;
 }
 
+#portfolio .portfolio-item .portfolio-link img {
+    height: 240px;
+}
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
     position: absolute;
     width: 100%;
@@ -445,7 +451,7 @@ section h3.section-subheading {
 
 @media(min-width:767px) {
     #portfolio .portfolio-item {
-        margin: 0 0 30px;
+        margin: 0 0 0px;
     }
 }
 
@@ -960,4 +966,4 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #fed136;
-}-
+}
