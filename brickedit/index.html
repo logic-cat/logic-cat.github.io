@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Unity WebGL Player | audiobrick-editor</title>
+      <link rel="stylesheet" href="/Template/style.css" />
+   </head>
+   <body style="text-align: center">
+      <canvas id="unity-canvas" style="width: 1280px; height: 720px; background: #231F20"></canvas>
+      <script src="Build/Builds.loader.js"></script>
+   <script>
+   createUnityInstance(document.querySelector("#unity-canvas"), {
+      dataUrl: "Build/Builds.data.br",
+      frameworkUrl: "Build/Builds.framework.js.br",
+      codeUrl: "Build/Builds.wasm.br",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "audiobrick-editor",
+      productVersion: "1.0",
+   }).then((unityInstance) => { window.unityInstance = unityInstance;});
+   </script>
+   <!-- Place for displaying a message from Unity -->
+   <div class="centered">
+      <h2>Level Recipe</h2>
+      Copy all text including START and END and paste into the Submissions channel on our <a href="https://discord.gg/cJWAvmPf9Y">Discord</a><br>
+      <button onclick="sendMessageToUnity()">Generate level Recipe</button><br>
+      <textarea name="levelRecipe" id="levelRecipe" rows=“30” cols=“50” readonly>Click 'Generate Level Receipe'...</textarea>
+      <!-- <input
+         type="textarea"
+         name="levelRecipe"
+         id="levelRecipe"
+         rows=5
+         cols=30
+         placeholder="Click 'Generate Level Receipe'..."
+      /> -->
+   </div>
+
+   <!-- Message form for sending stuff to Unity -->
+   <!-- <div class="message-form centered">
+      <h2>Message for Unity</h2>
+
+      <input
+         type="text"
+         name="txtMessage"
+         id="txtMessage"
+         placeholder="Enter message..."
+      />
+      <button onclick="sendMessageToUnity()">Send</button>
+   </div> -->
+   <script>
+   // Function which receives a message from Unity
+   function receiveMessageFromUnity(txt) {
+      // Get element to assign the message
+      const lblMessage = document.getElementById("levelRecipe");
+
+      // Assign received from Unity message
+      lblMessage.value = txt;
+   }
+
+   // Function which sends the message to Unity
+   function sendMessageToUnity() {
+      // Get the input field
+      // const txtMessage = document.getElementById("txtMessage");
+      // // Get the message
+      // const message = txtMessage.value;
+      // // Clear the input field
+      // txtMessage.value = "";
+      //window.unityInstance.SetFullscreen(fullscreen)
+      // Send message to the Unity scene
+      // Params: "Target object in the scene", "Function name", "Parameters"
+      window.unityInstance.SendMessage(
+         "[Bridge]",
+         "ReceiveMessageFromPage",
+         ""
+      );
+   }
+   </script>
+  </body>
+</html>
