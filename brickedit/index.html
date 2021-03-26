@@ -20,36 +20,20 @@
       productVersion: "1.0",
    }).then((unityInstance) => { window.unityInstance = unityInstance;});
    </script>
-   <!-- Place for displaying a message from Unity -->
    <div class="centered">
       <h2>Instructions</h2>
       Left click to place<br>right click to remove<br>Drag to quickly place or remove.<br>
-      <h2>Level Recipe</h2>
+      <h2>Export Level Recipe</h2>
       Copy all text including START and END and paste into the Submissions channel on our <a href="https://discord.gg/cJWAvmPf9Y">Discord</a><br><br>
-      <button onclick="sendMessageToUnity()">Generate level Recipe</button><br><br>
-      <textarea name="levelRecipe" id="levelRecipe" rows=“30” cols=“50” readonly>Click 'Generate Level Receipe'...</textarea>
-      <!-- <input
-         type="textarea"
-         name="levelRecipe"
-         id="levelRecipe"
-         rows=5
-         cols=30
-         placeholder="Click 'Generate Level Receipe'..."
-      /> -->
+      <button onclick="generateLevelRecipe()">Generate level Recipe</button><br><br>
+      <textarea name="levelRecipe" id="levelRecipe" rows=“30” cols=“50” readonly></textarea>
+
    </div>
-
-   <!-- Message form for sending stuff to Unity -->
-   <!-- <div class="message-form centered">
-      <h2>Message for Unity</h2>
-
-      <input
-         type="text"
-         name="txtMessage"
-         id="txtMessage"
-         placeholder="Enter message..."
-      />
-      <button onclick="sendMessageToUnity()">Send</button>
-   </div> -->
+   <div class="centered">
+      <h2>Import Level Recipe</h2>
+      <button onclick="tryImportLevelRecipe()">Import Level Recipe</button><br><br>
+      <textarea name="importRecipe" id="importRecipe" rows=“30” cols=“50”></textarea>
+   </div>
    <script>
    // Function which receives a message from Unity
    function receiveMessageFromUnity(txt) {
@@ -61,20 +45,36 @@
    }
 
    // Function which sends the message to Unity
-   function sendMessageToUnity() {
-      // Get the input field
-      // const txtMessage = document.getElementById("txtMessage");
-      // // Get the message
-      // const message = txtMessage.value;
-      // // Clear the input field
-      // txtMessage.value = "";
-      //window.unityInstance.SetFullscreen(fullscreen)
+   function generateLevelRecipe() {
       // Send message to the Unity scene
       // Params: "Target object in the scene", "Function name", "Parameters"
       window.unityInstance.SendMessage(
          "[Bridge]",
-         "ReceiveMessageFromPage",
-         ""
+         "GenerateLevel"
+      );
+   }
+
+   function tryImportLevelRecipe() {
+      var answer = window.confirm("This will clear your canvas, continue?");
+      if (answer) {
+         importLevelRecipe()
+      }
+   }
+
+   function importLevelRecipe() {
+      // Get the input field
+      const txtMessage = document.getElementById("importRecipe");
+      // Get the message
+      const message = txtMessage.value;
+      // Clear the input field
+      txtMessage.value = "";
+
+      // Send message to the Unity scene
+      // Params: "Target object in the scene", "Function name", "Parameters"
+      window.unityInstance.SendMessage(
+         "[Bridge]",
+         "ImportLevel",
+         message
       );
    }
    </script>
