@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Logic.Cat</title>
-    <link>https://www.logic.cat/categories/</link>
-    <description>Recent content in Categories on Logic.Cat</description>
+    <title>Categories on konbinilounge.com</title>
+    <link>https://www.konbinilounge.com/categories/</link>
+    <description>Recent content in Categories on konbinilounge.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://www.logic.cat/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.konbinilounge.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
