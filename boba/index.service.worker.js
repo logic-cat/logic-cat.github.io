@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1738051637|22089197151';
+const CACHE_VERSION = '1738059954|30406858957';
 /** @type {string} */
 const CACHE_PREFIX = 'boba-vn-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
