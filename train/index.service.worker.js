@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1755481547|4369817461';
+const CACHE_VERSION = '1755482098|4920604686';
 /** @type {string} */
 const CACHE_PREFIX = 'train-game-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
